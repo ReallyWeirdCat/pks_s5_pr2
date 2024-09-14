@@ -39,96 +39,106 @@ class HomePage extends StatelessWidget {
                "Авторизация", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
            ),
 
-           // Поле логина
-           const TextField(
-             decoration: InputDecoration( hintText: 'Логин',
-               filled: true,
-               fillColor: Colors.black12,
-               hintStyle: TextStyle(color: Colors.black38, fontSize: 22),
-               enabledBorder: OutlineInputBorder(
-                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                 borderSide: BorderSide.none,
-               ),
-               focusedBorder: OutlineInputBorder(
-                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                 borderSide: BorderSide.none,
-               ),
-             ),
-           ),
+           const Spacer(),
 
-           // Поле пароля
-           const TextField(
-             decoration: InputDecoration( hintText: 'Пароль',
-               filled: true,
-               fillColor: Colors.black12,
-               hintStyle: TextStyle(color: Colors.black38, fontSize: 22),
-               enabledBorder: OutlineInputBorder(
-                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                 borderSide: BorderSide.none,
-               ),
-               focusedBorder: OutlineInputBorder(
-                 borderRadius: BorderRadius.all(Radius.circular(5)),
-                 borderSide: BorderSide.none,
-               ),
-             ),
-           ),
-
-           // Запомнить меня
-           Row(
-             children: [
-               Checkbox(value: false, onChanged: (value) {},),
-               TextButton(
-                   onPressed: (){},
-                   child: const Text("Запомнить меня", style: TextStyle(color: Colors.grey, fontSize: 20),
-                   )
-               ),
-             ],
-           ),
-
-           // Кнопка входа
-           SizedBox(
-             width: double.infinity,
-             child: ElevatedButton(
-               style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.white,
-                 backgroundColor: Colors.blue,
-                 padding: const EdgeInsets.all(20),
-                 textStyle: const TextStyle(fontSize: 22),
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(5),
+           Padding(
+             padding: const EdgeInsets.all(15.0),
+             child: Wrap(
+               runSpacing: 15.0,
+               alignment: WrapAlignment.spaceAround,
+               children: <Widget> [
+                 // Поле логина
+                 const TextField(
+                   decoration: InputDecoration( hintText: 'Логин',
+                     filled: true,
+                     fillColor: Colors.black12,
+                     hintStyle: TextStyle(color: Colors.black38, fontSize: 22),
+                     enabledBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(5)),
+                       borderSide: BorderSide.none,
+                     ),
+                     focusedBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(5)),
+                       borderSide: BorderSide.none,
+                     ),
+                   ),
                  ),
-               ),
-               onPressed: () {},
-               child: const Text('Войти'),
-             ),
-           ),
 
-           // Кнопка регистрации
-           SizedBox(
-             width: double.infinity,
-             child: ElevatedButton(
-               style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.white,
-                 backgroundColor: Colors.blue,
-                 padding: const EdgeInsets.all(20),
-                 textStyle: const TextStyle(fontSize: 22),
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(5),
+                 // Поле пароля
+                 const TextField(
+                   decoration: InputDecoration( hintText: 'Пароль',
+                     filled: true,
+                     fillColor: Colors.black12,
+                     hintStyle: TextStyle(color: Colors.black38, fontSize: 22),
+                     enabledBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(5)),
+                       borderSide: BorderSide.none,
+                     ),
+                     focusedBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(5)),
+                       borderSide: BorderSide.none,
+                     ),
+                   ),
                  ),
-               ),
-               onPressed: () {},
-               child: const Text('Зарегистрироваться'),
-             ),
-           ),
 
-           // Кнопка восстановления
-           TextButton(
-               onPressed: (){},
-               child: const Text("Забыли пароль?", style: TextStyle(color: Colors.grey, fontSize: 20),
-               )
-           )
-         ]
-       ),
+                 // Запомнить меня
+                 Row(
+                   children: [
+                     Checkbox(value: false, onChanged: (value) {},),
+                     TextButton(
+                         onPressed: (){},
+                         child: const Text("Запомнить меня", style: TextStyle(color: Colors.grey, fontSize: 20),
+                         )
+                     ),
+                   ],
+                 ),
+
+                 // Кнопка входа
+                 SizedBox(
+                   width: double.infinity,
+                   child: ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                       foregroundColor: Colors.white,
+                       backgroundColor: Colors.blue,
+                       padding: const EdgeInsets.all(20),
+                       textStyle: const TextStyle(fontSize: 22),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(5),
+                       ),
+                     ),
+                     onPressed: () {},
+                     child: const Text('Войти'),
+                   ),
+                 ),
+
+                 // Кнопка регистрации
+                 SizedBox(
+                   width: double.infinity,
+                   child: ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                       foregroundColor: Colors.white,
+                       backgroundColor: Colors.blue,
+                       padding: const EdgeInsets.all(20),
+                       textStyle: const TextStyle(fontSize: 22),
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(5),
+                       ),
+                     ),
+                     onPressed: () {},
+                     child: const Text('Зарегистрироваться'),
+                   ),
+                 ),
+
+                 // Кнопка восстановления
+                 TextButton(
+                     onPressed: (){},
+                     child: const Text("Забыли пароль?", style: TextStyle(color: Colors.grey, fontSize: 20),
+                     ),
+                 ),
+             ]),
+           ),
+           const Spacer(),
+       ]),
     );
   }
 }
