@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'PKS S5P2',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         useMaterial3: true,
       ),
       home: const HomePage(),
@@ -42,9 +42,9 @@ class HomePage extends StatelessWidget {
            const Spacer(),
 
            Padding(
-             padding: const EdgeInsets.all(20.0),
+             padding: const EdgeInsets.all(18.0),
              child: Wrap(
-               runSpacing: 20.0,
+               runSpacing: 16.0,
                alignment: WrapAlignment.spaceAround,
                children: <Widget> [
                  // Поле логина
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                    decoration: InputDecoration( hintText: 'Логин',
                      filled: true,
                      fillColor: Colors.black12,
-                     hintStyle: TextStyle(color: Colors.black38, fontSize: 18, fontWeight: FontWeight.w500),
+                     hintStyle: TextStyle(color: Colors.black38, fontSize: 16, fontWeight: FontWeight.w500),
                      enabledBorder: OutlineInputBorder(
                        borderRadius: BorderRadius.all(Radius.circular(5)),
                        borderSide: BorderSide.none,
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                    decoration: InputDecoration( hintText: 'Пароль',
                      filled: true,
                      fillColor: Colors.black12,
-                     hintStyle: TextStyle(color: Colors.black38, fontSize: 18, fontWeight: FontWeight.w500),
+                     hintStyle: TextStyle(color: Colors.black38, fontSize: 16, fontWeight: FontWeight.w500),
                      enabledBorder: OutlineInputBorder(
                        borderRadius: BorderRadius.all(Radius.circular(5)),
                        borderSide: BorderSide.none,
@@ -83,11 +83,17 @@ class HomePage extends StatelessWidget {
 
                  // Запомнить меня
                  Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
                    children: [
-                     Checkbox(value: false, onChanged: (value) {},),
+                     Checkbox(
+                       value: false,
+                       onChanged: (value) {},
+                       side: WidgetStateBorderSide.resolveWith(
+                           (states) => const BorderSide(width: 2.0, color: Colors.grey),)
+                       ,),
                      TextButton(
                          onPressed: (){},
-                         child: const Text("Запомнить меня", style: TextStyle(color: Colors.black38, fontSize: 18, fontWeight: FontWeight.w500),
+                         child: const Text("Запомнить меня", style: TextStyle(color: Colors.black38, fontSize: 16, fontWeight: FontWeight.w500),
                          )
                      ),
                    ],
@@ -101,40 +107,40 @@ class HomePage extends StatelessWidget {
                        foregroundColor: Colors.white,
                        backgroundColor: Colors.blue,
                        padding: const EdgeInsets.all(20),
-                       textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                       textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                        shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.circular(5),
                        ),
                      ),
                      onPressed: () {},
-                     child: const Text('Войти'),
+                     child: const Text('Войти', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
                    ),
                  ),
 
                  // Кнопка регистрации
                  SizedBox(
                    width: double.infinity,
-                   child: ElevatedButton(
+                   child: OutlinedButton(
                      style: ElevatedButton.styleFrom(
                        foregroundColor: Colors.blue,
-                       backgroundColor: Colors.white,
+
                        side: const BorderSide(color: Colors.blue),
                        shadowColor: Colors.white,
                        padding: const EdgeInsets.all(20),
-                       textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                       textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                        shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.circular(5),
                        ),
                      ),
                      onPressed: () {},
-                     child: const Text('Зарегистрироваться'),
+                     child: const Text('Регистрация', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),),
                    ),
                  ),
 
                  // Кнопка восстановления
                  TextButton(
                      onPressed: (){},
-                     child: const Text("Забыли пароль?", style: TextStyle(color: Colors.grey, fontSize: 18, fontWeight: FontWeight.w500),
+                     child: const Text("Восстановить пароль", style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
                      ),
                  ),
              ]),
